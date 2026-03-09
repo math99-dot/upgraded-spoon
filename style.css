@@ -1,0 +1,70 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#f8f8f8;
+}
+
+/* Tablet friendly header */
+header{
+    background:#fbb2cd;
+    color:white;
+    padding:30px;
+    text-align:center;
+}
+
+/* Larger navigation for tablets */
+nav{
+    background:#7da985;
+    padding:16px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    margin:0 20px;
+    text-decoration:none;
+    font-size:20px;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* Tablet grid layout */
+.container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:20px;
+    padding:30px;
+}
+
+/* Card style sections */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.15);
+    transition:transform 0.2s;
+}
+
+/* Tablet feature: hover animation */
+.card:hover{
+    transform:scale(1.03);
+}
+
+/* Hero banner for tablet layout */
+.hero{
+    background:#fff4fe;
+    padding:40px;
+    text-align:center;
+    font-size:22px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#eee;
+    margin-top:20px;
+    font-size:16px;
+}
