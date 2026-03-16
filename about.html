@@ -1,41 +1,55 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>About Clara</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Clara</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-<h1>About Clara</h1>
+  <h1>About Clara</h1>
+  <p>Our Story</p>
 </header>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="shop.html">Shop Flowers</a>
-<a href="about.html">About Clara</a>
-<a href="weddings.html">Weddings & Events</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop Flowers</a>
+    <a href="about.html">About Clara</a>
+    <a href="weddings.html">Weddings &amp; Events</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <div class="container">
-<div class="card">
-<h2>Our Story</h2>
-<p>Flowers by Clara is a small local floral business in the Tampa Bay area.</p>
+  <div class="card">
+    <h2>Our Story</h2>
+    <p>Text here</p>
+  </div>
+
+  <div class="card">
+    <h2>Our Mission</h2>
+    <p>Text here<br></p>
+  </div>
+
+  <div class="card">
+    <h2>Our Quality</h2>
+    <p>Text here<br></p>
+  </div>
 </div>
 
-<div class="card">
-<h2>Our Mission</h2>
-<p>We believe flowers make every moment special and memorable.</p>
-</div>
+<footer><p>&copy; Flowers by Clara</p></footer>
 
-<div class="card">
-<h2>Quality</h2>
-<p>Text.</p>
-</div>
-</div>
-
-<footer><p>Copyright Flowers by Clara</p></footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>
