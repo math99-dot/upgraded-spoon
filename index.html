@@ -1,46 +1,63 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Flowers by Clara</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowers by Clara</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-<h1>Flowers by Clara</h1>
-<p>Beautiful flowers for every occasion</p>
+  <h1>Flowers by Clara</h1>
+  <p>Beautiful flowers for every occasion</p>
 </header>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="shop.html">Shop Flowers</a>
-<a href="about.html">About Clara</a>
-<a href="weddings.html">Weddings & Events</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop Flowers</a>
+    <a href="about.html">About Clara</a>
+    <a href="weddings.html">Weddings &amp; Events</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <div class="hero">
-Welcome to Flowers by Clara. Handcrafted bouquets and floral designs.
+  <h2>Welcome to Flowers by Clara</h2>
+  <p><br></p>
 </div>
 
 <div class="container">
-<div class="card">
-<h2>Fresh Bouquets</h2>
-<p>Handmade arrangements using fresh flowers.</p>
+  <div class="card">
+    <img src="images/bouquet.jpg" alt="Fresh bouquet of white and purple flowers">
+    <h2>Fresh Bouquets</h2>
+    <p>Handmade arrangements using seasonal flowers, crafted for any occasion.</p>
+  </div>
+
+  <div class="card">
+    <img src="images/elegant.jpg" alt="Elegant pink and purple bouquet">
+    <h2>Custom Orders</h2>
+    <p>Have a custom order in mind? We'll work with you to create a perfect arrangement.</p>
+  </div>
+
+  <div class="card">
+    <img src="images/bridal.jpg" alt="Bridal orchid bouquet">
+    <h2>Special Events</h2>
+    <p>For anything form weddings or birthdays, we bring beauty to every celebration.</p>
+  </div>
 </div>
 
-<div class="card">
-<h2>Custom Orders</h2>
-<p>Text here</p>
-</div>
+<footer><p>&copy; Flowers by Clara</p></footer>
 
-<div class="card">
-<h2>Special Events</h2>
-<p>Text here</p>
-</div>
-</div>
-
-<footer><p>Copyright : Flowers by Clara</p></footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>
