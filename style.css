@@ -1,70 +1,205 @@
+/* ===== BASE ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
-    margin:0;
-    background:#f8f8f8;
+    background: #f8f8f8;
+    color: #333;
 }
 
-/* Tablet friendly header */
-header{
-    background:#fbb2cd;
-    color:white;
-    padding:30px;
-    text-align:center;
+/* ===== HEADER ===== */
+header {
+    background: #fbb2cd;
+    color: white;
+    padding: 30px;
+    text-align: center;
 }
 
-/* Larger navigation for tablets */
-nav{
-    background:#7da985;
-    padding:16px;
-    text-align:center;
+header h1 { font-size: 2.2rem; }
+header p  { font-size: 1.1rem; margin-top: 6px; }
+
+/* ===== NAV — desktop ===== */
+nav {
+    background: #7da985;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-nav a{
-    color:white;
-    margin:0 20px;
-    text-decoration:none;
-    font-size:20px;
+.nav-links {
+    display: flex;
+    gap: 0;
 }
 
-nav a:hover{
-    text-decoration:underline;
+.nav-links a {
+    color: white;
+    padding: 16px 22px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
 }
 
-/* Tablet grid layout */
-.container{
-    display:grid;
+.nav-links a:hover { background: rgba(0,0,0,0.15); }
+
+/* ===== HAMBURGER BUTTON ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 14px;
+    margin-left: auto;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background: #fff4fe;
+    padding: 50px 30px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.hero h2 { font-size: 1.8rem; margin-bottom: 10px; color: #7da985; }
+
+/* ===== CARDS GRID ===== */
+.container {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap:20px;
-    padding:30px;
+    gap: 20px;
+    padding: 30px;
 }
 
-/* Card style sections */
-.card{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 3px 8px rgba(0,0,0,0.15);
-    transition:transform 0.2s;
+.card {
+    background: #e1c9d2;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
 }
 
-/* Tablet feature: hover animation */
-.card:hover{
-    transform:scale(1.03);
+.card:hover { transform: scale(1.03); }
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 14px;
 }
 
-/* Hero banner for tablet layout */
-.hero{
-    background:#fff4fe;
-    padding:40px;
-    text-align:center;
-    font-size:22px;
+.card h2 { margin-bottom: 10px; color: #555; }
+
+/* ===== CONTACT FORM PAGE ===== */
+.form-section {
+    max-width: 650px;
+    margin: 40px auto;
+    background: white;
+    padding: 35px 40px;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
 }
 
-footer{
-    text-align:center;
-    padding:20px;
-    background:#eee;
-    margin-top:20px;
-    font-size:16px;
+.form-section h2 {
+    color: #7da985;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.form-group textarea { resize: vertical; height: 120px; }
+
+.btn-submit {
+    background: #fbb2cd;
+    color: white;
+    border: none;
+    padding: 13px 30px;
+    font-size: 17px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover { background: #f08fb0; }
+
+.success-msg {
+    display: none;
+    background: #e6f4ea;
+    border: 1px solid #7da985;
+    color: #3a7a45;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-top: 18px;
+    font-size: 16px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #eee;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* ===== TABLET (max 900px) ===== */
+@media (max-width: 900px) {
+    .container { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== MOBILE — hamburger kicks in ===== */
+@media (max-width: 600px) {
+    .hamburger { display: flex; }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #7da985;
+        z-index: 100;
+    }
+
+    .nav-links.open { display: flex; }
+
+    nav { justify-content: flex-start; flex-wrap: wrap; }
+
+    .container { grid-template-columns: 1fr; padding: 16px; }
+
+    .form-section { margin: 20px 14px; padding: 24px 18px; }
 }
