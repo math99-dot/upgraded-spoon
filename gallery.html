@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery – Flowers by Clara</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Our Gallery</h1>
+  <p>A look at some of our beautiful arrangements</p>
+</header>
+
+<nav>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop Flowers</a>
+    <a href="about.html">About Clara</a>
+    <a href="weddings.html">Weddings &amp; Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="gallery-hero">
+  <p>Every arrangement is made with love and attention to detail.</p>
+</div>
+
+<div class="gallery-grid">
+
+  <div class="gallery-item">
+    <img src="beautiful-bouquet-flowers.jpg" alt="Beautiful bouquet of flowers">
+    <div class="gallery-caption">Fresh Seasonal Bouquet</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="elegant-bouquet-pink-purple-flowers-with-decorative-green-leaves.jpg" alt="Elegant pink and purple bouquet with green leaves">
+    <div class="gallery-caption">Elegant Pink &amp; Purple Arrangement</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="Bridal.jpg" alt="Bridal bouquet">
+    <div class="gallery-caption">Bridal Bouquet</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="Student_example_floral_arrangements_1.jpg" alt="Student floral arrangement example">
+    <div class="gallery-caption">Custom Floral Design</div>
+  </div>
+
+</div>
+
+<!-- Lightbox overlay -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<footer><p>&copy; Flowers by Clara</p></footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  // Lightbox
+  document.querySelectorAll('.gallery-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      var img = item.querySelector('img');
+      var caption = item.querySelector('.gallery-caption').textContent;
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      document.getElementById('lightbox-caption').textContent = caption;
+      document.getElementById('lightbox').classList.add('active');
+    });
+  });
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
